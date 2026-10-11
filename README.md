@@ -21,17 +21,17 @@
 
 ## Features
 
-- 📤 Upload a diagram image (flowchart, process map, BPMN-style diagram, etc.)
-- 🧠 **VLM-first detection**: uses a local vision-language model (via Ollama) to read the diagram like a human would, falling back to classical CV (Hough transforms + contour analysis) when a vision model isn't available or returns too few edges
-- 🔎 Automatic detection of **nodes** (shapes/boxes) and **edges** (arrows/connectors), including start/end state inference (with color-based hints, e.g. green = start)
-- 🎯 **Pixel-accurate box snapping**: VLM-proposed node boxes are snapped to real contour boundaries for precision
-- 🔤 OCR-based text extraction from nodes (EasyOCR), used both standalone and to clean up VLM labels
-- 🖼️ Annotated overlay preview showing detected nodes, arrows, and directionality
-- 📊 Live statistics: node count, edge count, start/end points, orphan nodes, cycles, and warnings/uncertainties
-- 🧠 Optional local LLM cleanup (via [Ollama](https://ollama.com)) for label normalization and a natural-language summary — fully optional; if Ollama is unreachable, the pipeline silently continues with classical results
-- ⬇️ Export results as **Excel**, **JSON**, or the **annotated image**
-- ⚡ Real-time progress bar with step-by-step status while the pipeline runs
-- 🧩 No hardcoded/expected outputs anywhere — every result is derived purely from the uploaded pixels; nothing external "corrects" a detection after the fact
+- Upload a diagram image (flowchart, process map, BPMN-style diagram, etc.)
+- **VLM-first detection**: uses a local vision-language model (via Ollama) to read the diagram like a human would, falling back to classical CV (Hough transforms + contour analysis) when a vision model isn't available or returns too few edges
+- Automatic detection of **nodes** (shapes/boxes) and **edges** (arrows/connectors), including start/end state inference (with color-based hints, e.g. green = start)
+- **Pixel-accurate box snapping**: VLM-proposed node boxes are snapped to real contour boundaries for precision
+- OCR-based text extraction from nodes (EasyOCR), used both standalone and to clean up VLM labels
+- Annotated overlay preview showing detected nodes, arrows, and directionality
+- Live statistics: node count, edge count, start/end points, orphan nodes, cycles, and warnings/uncertainties
+- Optional local LLM cleanup (via [Ollama](https://ollama.com)) for label normalization and a natural-language summary — fully optional; if Ollama is unreachable, the pipeline silently continues with classical results
+- Export results as **Excel**, **JSON**, or the **annotated image**
+- Real-time progress bar with step-by-step status while the pipeline runs
+- No hardcoded/expected outputs anywhere — every result is derived purely from the uploaded pixels; nothing external "corrects" a detection after the fact
 
 ## How It Works (Pipeline Architecture)
 
